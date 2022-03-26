@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private GameObject obstacle;
-    [SerializeField] private float speed = 10f;
 
     private float _startDelay = 1f;
     private float _repeatRate = 2f;
@@ -17,8 +16,11 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnObstacles()
     {
-        Vector2 spawnPosition = new Vector2(15, Random.Range(-3f, 3f));
-        Instantiate(obstacle, spawnPosition, obstacle.transform.rotation);
+        if(!PlayerController.instance.IsGameOver)
+        {
+            Vector2 spawnPosition = new Vector2(15, Random.Range(-3f, 3f));
+            Instantiate(obstacle, spawnPosition, obstacle.transform.rotation);
+        }
     }
 
 }

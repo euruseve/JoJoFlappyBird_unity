@@ -5,13 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
+
     [SerializeField] private float thrust = 100f;
+    
     private Rigidbody2D rb;
     private bool _isGameOver;
 
     public bool IsGameOver
     {
         get => _isGameOver;
+        set
+        {
+            _isGameOver = value;
+        }
     }
 
     void Awake()
