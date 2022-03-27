@@ -7,10 +7,9 @@ using TMPro;
 public class PointsController : MonoBehaviour
 {
     [SerializeField] private TMP_Text pointsText;
-    private int _score = 0;
     void Start()
     {
-        pointsText.text = $"Points: {_score}";
+        pointsText.text = $"Points: {PlayerController.instance.Points}";
     }
 
     void OnTriggerExit2D(Collider2D other) 
@@ -20,8 +19,8 @@ public class PointsController : MonoBehaviour
 
     void AddPoints()
     {
-        _score++;
-        pointsText.text = $"Points: {_score}";
+        PlayerController.instance.Points++;
+        pointsText.text = $"Points: {PlayerController.instance.Points}";
     }
 
 

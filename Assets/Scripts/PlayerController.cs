@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float thrust = 100f;
     
     private Rigidbody2D rb;
+    private int _points = 0;
     private bool _isGameOver;
 
     public bool IsGameOver
@@ -17,6 +18,15 @@ public class PlayerController : MonoBehaviour
         set
         {
             _isGameOver = value;
+        }
+    }
+
+    public int Points
+    {
+        get => _points;
+        set
+        {
+            _points = value;
         }
     }
 
